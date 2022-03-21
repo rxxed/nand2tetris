@@ -60,7 +60,7 @@ M=D
         0;JMP
 
 (WHITEN)
-        // if R0 == kbd, jump to LOOP as its the end of the screen
+        // if R0 == screenend, jump to LOOP
         @R0
         D=M
         @screenend
