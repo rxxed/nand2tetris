@@ -52,7 +52,7 @@ CHIP CPU {
     And(a=instruction[5], b=instruction[15], out=and15-5);
     Not(in=instruction[15], out=not15);
     Or(a=and15-5, b=not15, out=loadA);
-    Register(in=muxOut, load=loadA, out=AOut, out[0..14]=addressM);
+    ARegister(in=muxOut, load=loadA, out=AOut, out[0..14]=addressM);
 
     // D register
     DRegister(in=outM2, load=instruction[4], out=DOut);
