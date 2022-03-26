@@ -55,7 +55,9 @@ CHIP CPU {
     ARegister(in=muxOut, load=loadA, out=AOut, out[0..14]=addressM);
 
     // D register
-    DRegister(in=outM2, load=instruction[4], out=DOut);
+    // don't load D register if instruction is an a-instruction
+    And(a=instruction[4], b=instruction[15], out=loadD);
+    DRegister(in=outM2, load=loadD, out=DOut);
 
     // ALU
     Mux16(a=AOut, b=inM, sel=instruction[12], out=muxAM);
