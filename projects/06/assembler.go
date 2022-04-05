@@ -52,7 +52,7 @@ var jumpCode = map[string]string{
 var A_COMMAND int = 0
 var C_COMMAND int = 1
 var L_COMMAND int = 2
-var N_COMMAND int = 2 // not a command
+var N_COMMAND int = 3 // not a command
 
 func openSourceFile(fileName string) *os.File {
 	file, err := os.Open(fileName)
